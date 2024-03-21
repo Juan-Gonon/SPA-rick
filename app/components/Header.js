@@ -3,7 +3,6 @@ export const Header = ()=>{
     nav.innerHTML = `
         <a href="#"> Home </a>
         <a href="/buscador"> Buscador </a>
-
     `;
 
     return nav;

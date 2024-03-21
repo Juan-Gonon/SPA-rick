@@ -1,8 +1,14 @@
 export const ajax = (props)=>{
     let {url, callback} = props;
-    
-    fetch(url)
-    .then((response)=>{
-        console.log(response);
+       
+    url('/character').then(({data})=>{
+        
+        const {results} = data;
+        console.log(results)
+
+        
+
+    }).catch((error) =>{
+        console.log(error.message)
     })
 }
