@@ -2,6 +2,7 @@ import { Header } from "./components/Header.js";
 import { ajax } from "./helpers/ajax.js";
 import { axioInstance } from "./helpers/urls.js";
 import { main } from "./components/Main.js";
+import { containerCards } from "./components/ContainerCard.js";
 
 
 export const App = ()=>{
@@ -12,6 +13,6 @@ export const App = ()=>{
     
     ajax({
         url : axioInstance,
-        callback: (data)=> console.log(data)
+        callback: (data)=> document.querySelector("#section").appendChild(containerCards(data))
     })
 }
