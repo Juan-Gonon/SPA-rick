@@ -1,3 +1,4 @@
+
 export const Card = (props)=>{
     
     const div = document.createElement("div");
@@ -34,6 +35,8 @@ export const Card = (props)=>{
     content.appendChild(link);
     box.appendChild(content);
     div.appendChild(box);
+
+
 
     return div;
 }
