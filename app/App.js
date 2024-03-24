@@ -7,8 +7,15 @@ import { containerCards } from "./components/ContainerCard.js";
 
 export const App = ()=>{
     const divRoot = document.querySelector("#root");
-    divRoot.innerHTML = "<h1> Nuestra primera web SPA</h1>";
-    divRoot.appendChild(Header());
+    const header = document.createElement('header');
+
+    header.classList.add('header');
+
+
+    header.innerHTML = `<h1 class="title">API Rick y Morty SPA</h1>`;
+    header.appendChild(Header());
+
+    divRoot.append(header);
     divRoot.appendChild(main())
     
     ajax({
