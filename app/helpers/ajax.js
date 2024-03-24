@@ -1,10 +1,12 @@
 export const ajax = (props)=>{
-    let {url, callback} = props;
+    let {url, callback, endpoint} = props;
+
 
        
-    url('/character').then(({data})=>{
+    url(endpoint).then(({data})=>{
         
         const {results} = data;
+        console.log(data)
         callback(results);
 
     }).catch((error) =>{

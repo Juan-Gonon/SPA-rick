@@ -21,6 +21,11 @@ export const Card = (props)=>{
     name.textContent = props.name;
     link.setAttribute('href', `#/${props.name}`);
     link.textContent = 'Ver mas';
+    link.setAttribute('id', props.id);
+
+    link.addEventListener('click', (e)=>{
+        console.log(e.target)
+    })
 
     content.appendChild(h2);
     content.appendChild(name);
