@@ -19,7 +19,7 @@ export const Card = (props)=>{
     h2.textContent = props.id < 10 ? `0${props.id}` :props.id;
     img.setAttribute("src", props.image);
     name.textContent = props.name;
-    link.setAttribute('href', '#');
+    link.setAttribute('href', `#/${props.name}`);
     link.textContent = 'Ver mas';
 
     content.appendChild(h2);

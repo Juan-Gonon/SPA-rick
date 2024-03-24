@@ -3,8 +3,8 @@ export const Header = ()=>{
 
     nav.classList.add('nav');
     nav.innerHTML = `
-        <a href="#"> Home </a>
-        <a href="/buscador"> Buscador </a>
+        <a href="#/"> Home </a>
+        <a href="#/buscador"> Buscador </a>
     `;
 
     return nav;
