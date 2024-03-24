@@ -24,7 +24,8 @@ export const Card = (props)=>{
     link.setAttribute('id', props.id);
 
     link.addEventListener('click', (e)=>{
-        console.log(e.target)
+
+        localStorage.setItem('id', e.target.id);
     })
 
     content.appendChild(h2);

@@ -6,8 +6,14 @@ export const ajax = (props)=>{
     url(endpoint).then(({data})=>{
         
         const {results} = data;
-        console.log(data)
-        callback(results);
+        
+        if(!results){
+            callback(data);
+        }else{
+            callback(results);
+        }
+
+        
 
     }).catch((error) =>{
         console.log(error.message)

@@ -1,11 +1,11 @@
 import { ajax } from "../helpers/ajax.js";
 import { axioInstance } from "../helpers/urls.js";
 import { containerCards } from "./ContainerCard.js";
+import { Card } from "./card.js";
 
 export const Router = ()=>{
     let {hash} = location;
 
-    console.log(hash)
 
     if(hash === "" || hash == "#/"){
         ajax({
@@ -14,13 +14,13 @@ export const Router = ()=>{
             endpoint: '/character'
         })
     }else if(hash === "#/buscador"){
-        // document.querySelector("#section").appendChild(containerCards(data)).innerHTML = `<h2> En proceso </h2>`
+
         let inputBuscador = document.querySelector('#buscador');
         inputBuscador.style.display = 'block';
 
         inputBuscador.addEventListener("change", (e)=>{
             let nameSearch = e.target.value;
-            console.log(nameSearch)
+    
 
             ajax({
                 url: axioInstance,
@@ -30,6 +30,16 @@ export const Router = ()=>{
             
         })
     }else{
+        const article = document.createElement("article");
+        article.classList.add('container');
+       const section = document.querySelector("#section");
 
+       section.appendChild(article);
+
+       ajax({
+        url: axioInstance,
+        callback: (data)=> article.appendChild(Card(data)),
+        endpoint: `/character/${localStorage.getItem('id')}`
+    })
     }
 }
