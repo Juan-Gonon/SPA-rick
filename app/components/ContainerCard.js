@@ -3,10 +3,11 @@ import { Card } from "./card.js";
 export const containerCards = (props)=>{
  
     let article = document.createElement("article");
-    article.classList.add('card-content');
+    article.classList.add('container');
 
-    props.map((element)=> article.appendChild(Card(element)));
+    let result = props.map((element)=> article.appendChild(Card(element)));
 
+    console.log(result)
     return article
 
 }

@@ -4,6 +4,7 @@ export const ajax = (props)=>{
     url('/character').then(({data})=>{
         
         const {results} = data;
+        console.log(results)
         callback(results);
 
     }).catch((error) =>{
