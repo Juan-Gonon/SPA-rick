@@ -171,7 +171,47 @@ body{
                     }
                 }
 
-        }
+            }
 
+        }
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    
+    main{
+
+        .container{
+            grid-template-columns: 1fr;
+            justify-items: center;
+
+
+        }
+    }
+}
+
+
+@media screen and (min-width: 700px) {
+    main{
+
+        .container{
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+
+
+        }
+    }
+}
+
+@media screen and (min-width: 950px) {
+    main{
+
+        .container{
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+
+
+        }
     }
 }
